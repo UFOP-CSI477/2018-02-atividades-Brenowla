@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="cadastrar.css">
+	<meta charset="utf-8">
+	<title>Cadastro de alunos:</title>
+</head>
+<body>
+
+	<h1>Insira seus dados:</h1>
+
+	<form method="post" action="validacao.html" id="formulario">
+		<label id="normal" for="nome">Nome:</label>
+		<input type="text" name="nome">
+
+		<label id="normal" for="endereco">Endereço</label>
+		<input type="text" name="endereco">
+
+		<label id="normal" for="genero">Gênero</label>
+
+		<input type="radio" id="feminino" name="genero" value="Feminino">
+		<label for="feminino">Feminino</label>
+
+		<input type="radio" id="masculino" name="genero" value="Masculino">
+		<label for="masculino">Masculino</label>
+
+		<input type="radio" id="naobinario" name="genero" value="Não binário">
+		<label for="naobinario">Não binário</label>
+
+		<label id="normal" for="cpf">CPF</label>
+		<input type="text" name="CPF" placeholder="***.***.***-**">
+
+		<label id="normal" for="senha">Senha</label>
+     	<input type="password" name="senha">
+
+     	<input id="normal" type="submit" value="Cadastrar">
+      	<input id="normal" type="reset" value="Limpar">
+	</form>
+
+	<a href="menu.html">Voltar</a>
+</body>
+</html>

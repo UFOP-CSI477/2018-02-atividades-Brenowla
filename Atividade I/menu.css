@@ -1,0 +1,24 @@
+#menu ul {
+    padding:0px;
+    margin:0px;
+    background-color:#C44C32;
+    list-style:none;
+    border-radius: 6px;
+    width: 100%;
+    border: 1px solid white;
+}
+
+#menu ul li{
+	margin: 4px;
+	display: inline;
+	color: #FFFFFF;
+}
+
+#menu ul li a{
+	color: #FFFFFF;
+}
+
+.fonte{
+	font-family: tahoma;
+	text-align: center;
+}
