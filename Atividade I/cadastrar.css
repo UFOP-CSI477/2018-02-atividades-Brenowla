@@ -7,6 +7,11 @@
   height:270px;
 }
 
+#formulario
+{
+  background-color: #B22609;
+}
+
 #cadastro #formulario
 {
   position:absolute;
@@ -22,6 +27,7 @@ fieldset
 
 #formulario #campo label
 {
+  color: white;
   position:absolute;
   left:18px;
   margin-right:5px;
@@ -29,6 +35,7 @@ fieldset
 
 #formulario #radio #normal
 {
+  color: white;
   position:absolute;
   left:18px;
   margin-right:5px;
@@ -54,9 +61,10 @@ fieldset
 }
 
 #radio #selecao{
+  color: white;
 	position:relative;
 	left:180px;
-  	margin-top:5px;
+  margin-top:5px;
 	display: inline;
 }
 
