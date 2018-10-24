@@ -45,6 +45,15 @@ function verificarCampo(campo){
 	}
 }
 
+function verificarCampoNum(campo){
+	if(isNaN(document.getElementById(campo).value)){
+		return false;
+	}
+	else{
+		return true;
+	}
+}
+
 function criarTabela(conteudo) {
   var tabela = document.createElement("table");
   var thead = document.createElement("thead");
@@ -83,7 +92,7 @@ function exibirVencedores(){
 			document.getElementById(campo).classList.add("is-invalid");
 		}
 		campo = ("part-" + i +"-tempo");
-		if(verificarCampo(campo)){
+		if(verificarCampo(campo) && verificarCampoNum(campo)){
 			participante.tempo = parseInt(document.getElementById(campo).value);
 			document.getElementById(campo).classList.add("is-valid");
 		}
