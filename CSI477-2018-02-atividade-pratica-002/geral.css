@@ -1,0 +1,15 @@
+.produto{
+	padding-top: 10px;
+	background: rgba(229,229,229,0.7);
+}
+
+.produto img{
+	display: block;
+	max-height: 250px;
+	margin-left: auto;
+    margin-right: auto;
+}
+
+.lista-produtos{
+	margin-top: 25px;
+}
