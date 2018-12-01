@@ -7,15 +7,6 @@ body{
 	width:100px;
 }
 
-.carrinho{
-	width: 30px;
-}
-
-.justificado{
-	display: flex;
-	justify-content: space-between;
-}
-
 .dimensoes-carrousel{
 	height: 400px;
 }
@@ -24,6 +15,6 @@ body{
 	height: 400px; 
 }
 
-.lista-produtos{
-	margin-top: 25px;
+.busca{
+	margin-left: 25px;
 }

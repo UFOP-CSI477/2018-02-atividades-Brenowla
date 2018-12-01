@@ -1,6 +1,19 @@
 .produto{
-	padding-top: 10px;
-	background: rgba(229,229,229,0.7);
+	border-radius: 5px;	
+	padding-bottom: 3px;
+	margin-bottom: 15px;
+	/*border: 1px grey solid;*/
+	box-shadow:10px 10px 50px grey;
+	background: rgba(0,0,0,0.85);
+}
+
+.produto a{
+	text-decoration: none;
+	color: white;
+}
+
+.produto a:hover{
+	text-decoration: none;
 }
 
 .produto img{
@@ -12,4 +25,12 @@
 
 .lista-produtos{
 	margin-top: 25px;
+	margin-bottom: 20px;
+}
+
+.bloco{
+	background: rgba(231,231,231,0.95);
+	border-radius: 5px;
+	padding: 5px 5px 5px 5px;
+	margin-top: 20px;
 }
