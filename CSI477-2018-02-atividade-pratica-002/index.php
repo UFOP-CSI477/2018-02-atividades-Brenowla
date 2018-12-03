@@ -1,3 +1,8 @@
+<?php 
+	session_start();
+	include("conexao.php");
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,16 +31,11 @@
 					<span class="navbar-toggler-icon"></span>
 				</button>
 
-				<a href="">
+				<a href="index.php">
 					<span> 
 						<img src="logo.png" class="logo">
 					</span>
 				</a>	
-
-				<form class="form-inline busca">
-					<input class="form-control mr-sm-2" type="search" placeholder="O que você procura?" aria-label="Pesquisar">
-					<button class="btn btn-light my-2 my-sm-0" type="submit">Pesquisar</button>
-				</form>	
 			</div>
 
 			<div class="collapse navbar-collapse justify-content-center" id="conteudoNavbarSuportado">
@@ -50,19 +50,29 @@
 						</a>
 
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<form method="post" class="dropdown-item" id="login" action="login.php">
-								<div class="form-group">
-									<label for="email">E-mail:</label>
-									<input type="email" name="e-mail" class="form-control" placeholder="Digite o e-mail:" id="email">
+							<?php 
+								if(isset($_SESSION['user']) && isset($_SESSION['senha'])){
+									echo "<p class='dropdown-item'> Conectado como: ".$_SESSION["user"]."</p>
+									<a class='dropdown-item' href='minhaconta.php'>Minha Conta</a>
+									<a class='dropdown-item' href='deslogar.php'>Sair</a>";
+								}
+								else{
+									echo "<form method='post' class='dropdown-item' id='login' action='login.php'>
+								<div class='form-group'>
+									<label for='email'>E-mail:</label>
+									<input type='email' name='e-mail' class='form-control' placeholder='E-mail:' id='email'>
 								</div>
-								<div class="form-group">
-									<label for="senha">Senha:</label>
-									<input type="password" name="senha" class="form-control" placeholder="Digite a senha:" id="email">	
+								<div class='form-group'>
+									<label for='senha'>Senha:</label>
+									<input type='password' name='senha' class='form-control' placeholder='Senha:' id='senha'>	
 								</div>
-								<button type="submit" class="btn btn-lg btn-block btn-light" id="logar">Login</button>
+								<button type='submit' class='btn btn-lg btn-block btn-light' id='logar'>Login</button>
 							</form>
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="#">Cadastrar</a>
+							<div class='dropdown-divider'></div>
+							<a class='dropdown-item' href='cadastrar.php'>Cadastrar</a>";
+								}
+							?>	
+	
 						</div>
 					</li>
 
@@ -74,6 +84,7 @@
 						</a>
 
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<?php ?>
 							<div class="dropdown-item align-items-baseline mw-100">
 								<p>Nome do produto</p>
 								<p>Quantidade: </p>
@@ -97,33 +108,6 @@
 		</div>
 
 	</nav>
-
-	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" >
-		<ol class="carousel-indicators">
-			<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-			<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-			<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-		</ol>
-		<div class="carousel-inner dimensoes-carrousel">
-			<div class="carousel-item active">
-				<img class="d-block" src="teste.jpeg" alt="First slide">
-			</div>
-			<div class="carousel-item">
-				<img class="d-block" src="teste.jpeg" alt="Second slide">
-			</div>
-			<div class="carousel-item">
-				<img class="d-block" src="teste.jpeg" alt="Third slide">
-			</div>
-		</div>
-		<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-			<span class="sr-only">Previous</span>
-		</a>
-		<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-			<span class="carousel-control-next-icon" aria-hidden="true"></span>
-			<span class="sr-only">Next</span>
-		</a>
-	</div>
 
 	<div class="container lista-produtos">
 		<div class="row">
@@ -226,6 +210,10 @@
 					</form>
 				</div>
 			</div>
+		</div>
+
+		<div class="d-flex justify-content-end">
+			<a class="link-adm" href="login_adm.php">Área Administrativa</a>
 		</div>
 	</div>
 

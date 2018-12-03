@@ -7,13 +7,17 @@
 	background: rgba(0,0,0,0.85);
 }
 
-.produto a{
+.produto h6{
 	text-decoration: none;
 	color: white;
 }
 
 .produto a:hover{
 	text-decoration: none;
+}
+
+.produto form input{
+	width: 90px !important;
 }
 
 .produto img{
@@ -33,4 +37,13 @@
 	border-radius: 5px;
 	padding: 5px 5px 5px 5px;
 	margin-top: 20px;
+}
+
+.link-adm{
+	text-decoration: none;
+	color: black;
+}
+
+.link-adm:hover{
+	text-decoration: none;
 }
