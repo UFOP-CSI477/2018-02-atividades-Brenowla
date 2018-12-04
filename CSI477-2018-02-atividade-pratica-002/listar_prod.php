@@ -3,6 +3,10 @@ session_start();
 if (!isset($_SESSION['user']) || !isset($_SESSION['senha']) || !isset($_SESSION["tipo"]) || $_SESSION["tipo"]==1 ||  $_SESSION["tipo"]==3) {
 	header('Location: index.php');
 }
+
+include("conexao.php");
+$produtos = $connection->query("SELECT * FROM produtos");
+
 ?>
 
 <!DOCTYPE html>
@@ -65,43 +69,42 @@ if (!isset($_SESSION['user']) || !isset($_SESSION['senha']) || !isset($_SESSION[
 					}
 					?>
 
-			</ul>
+				</ul>
+
+			</div>
 
 		</div>
 
+	</nav>
+
+	<div class="container bloco">
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">ID</th>
+					<th scope="col">Nome</th>
+					<th scope="col">Imagem</th>
+				</tr>
+			</thead>
+			<tbody>
+				<?php
+				while ($produto = $produtos->fetch()) {
+					echo "<tr>
+					<th scope='row'>".$produto["id"]."</th>
+					<td>".$produto["nome"]."</td>
+					<td><img src='".$produto["imagem"]."' width='40px' height='40px'></td>
+					</tr>";
+				}
+				?>
+			</tbody>
+		</table>
 	</div>
 
-</nav>
-
-<div class="container bloco">
-	<table class="table">
-		<thead>
-			<tr>
-				<th scope="col">ID</th>
-				<th scope="col">Nome</th>
-				<th scope="col">Imagem</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<th scope="row">1</th>
-				<td>Nome Nome Nome Nome</td>
-				<td><img src="produto.jpeg" width="40px" height="40px"></td>
-			</tr>
-			<tr>
-				<th scope="row">1</th>
-				<td>Nome Nome Nome Nome</td>
-				<td><img src="produto.jpeg" width="40px" height="40px"></td>
-			</tr>
-		</tbody>
-	</table>
-</div>
 
 
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
 </body>
 </html>

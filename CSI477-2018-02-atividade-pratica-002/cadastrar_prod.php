@@ -74,14 +74,14 @@ if (!isset($_SESSION['user']) || !isset($_SESSION['senha']) || !isset($_SESSION[
 </nav>
 
 <div class="container bloco">
-	<form>
+	<form enctype="multipart/form-data" method="post" action="executar_cadastro_prod.php">
 		<div class="form-group">
 			<label for="nome-produto">Nome do produto:</label>
-			<input type="email" name="nome-produto" class="form-control">
+			<input type="text" name="nome-produto" class="form-control">
 		</div>
 		<div class="form-group">
 			<label for="preco-produto">Preço do produto:</label>
-			<input type="text" name="preco-produto" class="form-control">
+			<input type="number" name="preco-produto" class="form-control" min="1">
 		</div>
 		<div class="custom-file">
 			<input type="file" name="imagem-produto" class="custom-file-input">
